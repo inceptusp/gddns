@@ -5,7 +5,7 @@ import 'package:http/http.dart' as http;
 
 ArgResults argResults;
 
-main(List<String> arguments) async {
+void main(List<String> arguments) async {
   final parser = ArgParser()
     ..addOption('username',
         abbr: 'u', help: 'Provided Google DNS username', valueHelp: 'username')
@@ -28,6 +28,7 @@ main(List<String> arguments) async {
     print(e);
     print('\nUsage:\n');
     print(parser.usage + '\n');
+    exit(-1);
   }
 
   http.Response response = await http.get('https://api.ipify.org?format=json');
