@@ -11,3 +11,4 @@ To run it you need the Dart SDK to compile the code or interpret it.
 ```Shell
 dart main.dart -u USERNAME_PROVIDED_BY_GOOGLE -n PASSWORD_PROVIDED_BY_GOOGLE -n YOUR.DDNS.HOSTNAME.tld
 ```
+- To automatically update the IP address, configure the above command as a CRON job, preferably, every 1 hour
