@@ -7,14 +7,10 @@ ArgResults argResults;
 
 void main(List<String> arguments) async {
   final parser = ArgParser()
-    ..addOption('username',
-        abbr: 'u', help: 'Provided Google DNS username', valueHelp: 'username')
-    ..addOption('password',
-        abbr: 'p', help: 'Provided Google DNS password', valueHelp: 'password')
+    ..addOption('username', abbr: 'u', help: 'Provided Google DNS username', valueHelp: 'username')
+    ..addOption('password', abbr: 'p', help: 'Provided Google DNS password', valueHelp: 'password')
     ..addOption('hostname',
-        abbr: 'n',
-        help: 'Google DNS hostname',
-        valueHelp: 'subdomain.domain.ttl')
+        abbr: 'n', help: 'Google DNS hostname', valueHelp: 'subdomain.domain.ttl')
     ..addFlag('help', abbr: 'h', help: 'This usage manual', negatable: false);
 
   try {
@@ -31,9 +27,9 @@ void main(List<String> arguments) async {
     exit(-1);
   }
 
-  http.Response response = await http.get('https://api.ipify.org?format=json');
+  var response = await http.get('https://api64.ipify.org?format=json');
   Map<String, dynamic> publicIp;
-  File lastIpFile = File('lastIP.txt');
+  var lastIpFile = File('lastIP.txt');
   String lastIp;
 
   if (response.statusCode == 200) {
@@ -46,7 +42,7 @@ void main(List<String> arguments) async {
       print('IP haven\'t changed');
     } else {
       try {
-        http.Response googleDns = await http.get('https://' +
+        var googleDns = await http.get('https://' +
             argResults['username'] +
             ':' +
             argResults['password'] +
