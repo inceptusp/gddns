@@ -1,6 +1,6 @@
 ## As Google had sold their Domains business to Squarespace and they don`t support DDNS, this repo is archived as of April/2024
 
---
+
 
 # Google Domains DDNS updater
 
